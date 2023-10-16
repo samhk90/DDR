@@ -30,50 +30,19 @@
           <tr>       
             <th scope="row">N/A</th>
             <td>N/A</td>
-            <td><input type="date" name="startdate" id="stratdate"></td>
+            <td><input type="date" name="startdate" id="startdate"></td>
             <td><input type="date" name="enddate" id="enddate"></td>
             <td>Month,year</td>
-            <td><input type="date" name="dateexcluded" id="dateexcluded"></td>
+            <!-- <td><input type="date" name="dateexcluded[]" id="dateexcluded">
+                <button id="calbtn"><i class="fa fa-calendar"></i></button></td> -->
+                <td>
+                  <input type="text" name="excludeddates" id="excludeddates">
+                  <button type="button" onclick="addExcludedDate()">Add</button>
+                </td>
             <td></td>
             <td><input type="text" name="leadCount" id="leadCount"></td>
             <td><input type="text" name="expectedDrr" id="expectedDrr"></td>
             <td><button type="submit" onclick="addRow()">add</button></td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>N/A</td>
-            <td>2023-10-03</td>
-            <td>2023-10-25</td>
-            <td>10</td>
-            <td>2023-10-08,2023-10-15,2023-10-22</td>
-            <td>20</td>
-            <td>8000</td>
-            <td>400</td>
-            <td>2023-10-03 13:30:41</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>N/A</td>
-            <td>2023-10-03</td>
-            <td>2023-10-25</td>
-            <td>10</td>
-            <td>2023-10-08,2023-10-15,2023-10-22</td>
-            <td>20</td>
-            <td>8000</td>
-            <td>400</td>
-            <td>2023-10-03 13:30:41</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>N/A</td>
-            <td>2023-10-03</td>
-            <td>2023-10-25</td>
-            <td>10</td>
-            <td>2023-10-08,2023-10-15,2023-10-22</td>
-            <td>20</td>
-            <td>8000</td>
-            <td>400</td>
-            <td>2023-10-03 13:30:41</td>
           </tr>
 
         </tbody>
