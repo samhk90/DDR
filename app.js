@@ -1,16 +1,13 @@
 function addRow() {
     var table = document.getElementById("myTable");
-    var newRow = table.insertRow(table.rows.length - 1); // Insert row just before the last row
-    var calbtn=document.getElementById("calbtn");
+    var newRow = table.insertRow(table.rows.length);
     var startDate = document.getElementById("startdate").value;
     var endDate = document.getElementById("enddate").value;
-   // var dateExcluded = document.getElementById("dateexcluded").value;
-    //var excludedDates = document.getElementById("dateexcluded").value.split(',');
-    //take excluded dates as array
     var excludedDates = document.getElementById("excludeddates").value.split(',');
 
     var numberOfDays = calculateNumberOfDays(startDate, endDate, excludedDates);
-
+    var leadCount = document.getElementById("leadCount").value;
+    var expectedDrr = leadCount/numberOfDays;
     newRow.innerHTML = `<th scope="row">1</th>
                                 <td>N/A</td>
                                 <td>${startDate}</td>
@@ -19,9 +16,10 @@ function addRow() {
                                 <td>${excludedDates.join(', ')}</td>
                                 <td>${numberOfDays}</td> 
                                 <td>${document.getElementById("leadCount").value}</td>
-                                <td>${document.getElementById("expectedDrr").value}</td>
+                                <td>${expectedDrr}</td>
                                 <td>${new Date().toLocaleString()}</td>
                                `;
+                               hideEditableRow();
 }
 
 
@@ -29,13 +27,6 @@ function calculateNumberOfDays(startDate, endDate, excludedDates) {
     var start = new Date(startDate);
     var end = new Date(endDate);
     var totalDays = end.getDate() - start.getDate()- excludedDates.length+1;
-    // var totalDays = 0;
-    // for (var date = start; date <= end; date.setDate(date.getDate() + 1)) {
-    //     var dateString = date.toISOString().split('T')[0];
-    //     if (!excludedDates.includes(dateString)) {
-    //         totalDays++;
-    //     }
-    // }
     return totalDays;
 
 
@@ -55,3 +46,13 @@ function addExcludedDate() {
     excludedDates.push(newExcludedDate);
     document.getElementById("excludeddates").value = excludedDates.join(',');
 }
+function showEditableRow() {
+    document.getElementById("editableRow").style.display = "table-row";
+     // Hide the "Add New" button
+  }
+  
+  function hideEditableRow() {
+    document.getElementById("editableRow").style.display = "none";
+    document.getElementById("addNew").style.display = "inline-block"; // Show the "Add New" button
+  }
+

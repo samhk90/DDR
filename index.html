@@ -10,7 +10,7 @@
     <title>DDR</title>
 </head>
 <body>
-    <button class="btn btn-primary" onclick="addRow()">Add new</button>
+    <button class="btn btn-primary"  onclick="showEditableRow()">Add new</button>
     <table class="table table-striped-columns  table-dark table-hover" id="myTable">
         <thead>
           <tr>
@@ -27,22 +27,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr>       
+          <tr id="editableRow">       
             <th scope="row">N/A</th>
             <td>N/A</td>
             <td><input type="date" name="startdate" id="startdate"></td>
             <td><input type="date" name="enddate" id="enddate"></td>
             <td>Month,year</td>
-            <!-- <td><input type="date" name="dateexcluded[]" id="dateexcluded">
-                <button id="calbtn"><i class="fa fa-calendar"></i></button></td> -->
                 <td>
                   <input type="text" name="excludeddates" id="excludeddates">
                   <button type="button" onclick="addExcludedDate()">Add</button>
                 </td>
             <td></td>
             <td><input type="text" name="leadCount" id="leadCount"></td>
-            <td><input type="text" name="expectedDrr" id="expectedDrr"></td>
-            <td><button type="submit" onclick="addRow()">add</button></td>
+            <td></td>
+            <td>        <button type="button" onclick="addRow()">Save</button>
+              <button type="button" onclick="hideEditableRow()">Cancel</button></td>
           </tr>
 
         </tbody>
