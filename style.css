@@ -4,3 +4,11 @@ body{
 button{
     margin: 10px;
 }
+.hide{
+    height: 0px;
+    width: 0px;
+    display: none;
+}
+.hide input{
+    display: none;
+}

@@ -10,8 +10,8 @@
     <title>DDR</title>
 </head>
 <body>
-    <button class="btn btn-primary">Add new</button>
-    <table class="table table-striped-columns  table-dark table-hover">
+    <button class="btn btn-primary" onclick="addRow()">Add new</button>
+    <table class="table table-striped-columns  table-dark table-hover" id="myTable">
         <thead>
           <tr>
             <th scope="col">Action</th>
@@ -27,6 +27,18 @@
           </tr>
         </thead>
         <tbody>
+          <tr>       
+            <th scope="row">N/A</th>
+            <td>N/A</td>
+            <td><input type="date" name="startdate" id="stratdate"></td>
+            <td><input type="date" name="enddate" id="enddate"></td>
+            <td>Month,year</td>
+            <td><input type="date" name="dateexcluded" id="dateexcluded"></td>
+            <td></td>
+            <td><input type="text" name="leadCount" id="leadCount"></td>
+            <td><input type="text" name="expectedDrr" id="expectedDrr"></td>
+            <td><button type="submit" onclick="addRow()">add</button></td>
+          </tr>
           <tr>
             <th scope="row">1</th>
             <td>N/A</td>
@@ -67,7 +79,7 @@
         </tbody>
       </table>
     
-
+      <script src="/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </body>
 </html>

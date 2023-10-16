@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input in Table Row</title>
+</head>
+<body>
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </table>
+
+    <button onclick="addRow()">Add Row</button>
+
+    <script>
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(-1); // Insert a new row at the end of the table.
+
+            var cell1 = row.insertCell(0); // Insert cells in the new row.
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+
+            var inputName = document.createElement("input"); // Create an input element for name.
+            inputName.type = "text";
+            cell1.appendChild(inputName);
+
+            var inputAge = document.createElement("input"); // Create an input element for age.
+            inputAge.type = "number";
+            cell2.appendChild(inputAge);
+
+            var removeButton = document.createElement("button"); // Create a button to remove the row.
+            removeButton.innerHTML = "Remove";
+            removeButton.onclick = function () {
+                table.deleteRow(row.rowIndex);
+            };
+            cell3.appendChild(removeButton);
+        }
+    </script>
+</body>
+</html>
