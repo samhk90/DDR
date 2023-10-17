@@ -1,15 +1,33 @@
 body{
     background-color: #212529;
     padding: 50px;
+    scroll-behavior: smooth;
 }
 button{
     margin: 10px;
 }
-.hide{
-    height: 0px;
-    width: 0px;
-    display: none;
+
+table{
+    cursor: pointer;
+    border: solid 10px white;
 }
-.hide input{
-    display: none;
+#addnewbtn{
+    margin: 10px;
+    width: 150px;
+}
+#updatetbtn{
+    margin: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: greenyellow;
+    color: black;
+}
+#cancelbtn{
+    margin: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
 }

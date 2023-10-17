@@ -10,7 +10,7 @@
     <title>DDR</title>
 </head>
 <body>
-    <button class="btn btn-primary"  onclick="showEditableRow()">Add new</button>
+    <button class="btn btn-primary" id="addnewbtn" onclick="showEditableRow()">Add new</button>
     <table class="table table-striped-columns  table-dark table-hover" id="myTable">
         <thead>
           <tr>
@@ -40,8 +40,8 @@
             <td></td>
             <td><input type="text" name="leadCount" id="leadCount"></td>
             <td></td>
-            <td>        <button type="button" onclick="addRow()">Save</button>
-              <button type="button" onclick="hideEditableRow()">Cancel</button></td>
+            <td>        <button type="button"id="updatetbtn" onclick="addRow()">Save</button>
+              <button type="button" id="cancelbtn" onclick="hideEditableRow()">Cancel</button></td>
           </tr>
 
         </tbody>

@@ -1,5 +1,7 @@
+var table = document.getElementById("myTable");
+hideEditableRow();
 function addRow() {
-    var table = document.getElementById("myTable");
+
     var newRow = table.insertRow(table.rows.length);
     var startDate = document.getElementById("startdate").value;
     var endDate = document.getElementById("enddate").value;
@@ -7,18 +9,22 @@ function addRow() {
 
     var numberOfDays = calculateNumberOfDays(startDate, endDate, excludedDates);
     var leadCount = document.getElementById("leadCount").value;
-    var expectedDrr = leadCount/numberOfDays;
+    var expectedDrr = leadCount / numberOfDays;
+    var startMonthYear = new Date(startDate).toLocaleString('default', { month: 'long', year: 'numeric' });
+    var endMonthYear = new Date(endDate).toLocaleString('default', { month: 'long', year: 'numeric' });
+
     newRow.innerHTML = `<th scope="row">1</th>
                                 <td>N/A</td>
                                 <td>${startDate}</td>
                                 <td>${endDate}</td>
-                                <td>10</td>
+                                <td>${startMonthYear,endMonthYear}</td>
                                 <td>${excludedDates.join(', ')}</td>
                                 <td>${numberOfDays}</td> 
                                 <td>${document.getElementById("leadCount").value}</td>
                                 <td>${expectedDrr}</td>
                                 <td>${new Date().toLocaleString()}</td>
                                `;
+                               localStorage.setItem('table',table.innerHTML);
                                hideEditableRow();
 }
 
@@ -26,7 +32,7 @@ function addRow() {
 function calculateNumberOfDays(startDate, endDate, excludedDates) {
     var start = new Date(startDate);
     var end = new Date(endDate);
-    var totalDays = end.getDate() - start.getDate()- excludedDates.length+1;
+    var totalDays = end.getDate() - start.getDate() - excludedDates.length + 1;
     return totalDays;
 
 
@@ -48,11 +54,13 @@ function addExcludedDate() {
 }
 function showEditableRow() {
     document.getElementById("editableRow").style.display = "table-row";
-     // Hide the "Add New" button
-  }
-  
-  function hideEditableRow() {
-    document.getElementById("editableRow").style.display = "none";
-    document.getElementById("addNew").style.display = "inline-block"; // Show the "Add New" button
-  }
+}
 
+function hideEditableRow() {
+    document.getElementById("editableRow").style.display = "none";
+}
+
+function getData(){
+    table.innerHTML = localStorage.getItem('table');
+}
+getData();
