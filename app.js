@@ -1,5 +1,4 @@
 var table = document.getElementById("myTable");
-hideEditableRow();
 function addRow() {
 
     var newRow = table.insertRow(table.rows.length);
@@ -64,4 +63,3 @@ function getData(){
     table.innerHTML = localStorage.getItem('table');
 }
 getData();
-//samee
