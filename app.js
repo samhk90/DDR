@@ -23,7 +23,7 @@ function addRow() {
                                 <td>${expectedDrr}</td>
                                 <td>${new Date().toLocaleString()}</td>
                                `;
-                               localStorage.setItem('table',table.innerHTML);
+
                                hideEditableRow();
 }
 
