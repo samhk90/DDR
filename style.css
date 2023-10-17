@@ -2,6 +2,7 @@ body{
     background-color: #212529;
     padding: 50px;
     scroll-behavior: smooth;
+
 }
 button{
     margin: 10px;          
@@ -10,6 +11,13 @@ button{
 table{
     cursor: pointer;
     border: solid 10px white;
+}
+@media only screen and (max-width:767px){
+
+    table{
+       width: 100%;
+        margin: 10px auto;
+    }
 }
 #addnewbtn{
     margin: 10px;
