@@ -1,5 +1,5 @@
 
-function addRow() {
+function addRow() {                                     //function to add row to the table and save inputs to local storage
     var table = document.getElementById("myTable");
     var newRow = table.insertRow(table.rows.length);
     var startDate = document.getElementById("startdate").value;
@@ -28,7 +28,7 @@ function addRow() {
 }
 
 
-function calculateNumberOfDays(startDate, endDate, excludedDates) {
+function calculateNumberOfDays(startDate, endDate, excludedDates) {   ///function to calculate number of days
     var start = new Date(startDate);
     var end = new Date(endDate);
     var totalDays = end.getDate() - start.getDate() - excludedDates.length + 1;
@@ -37,7 +37,7 @@ function calculateNumberOfDays(startDate, endDate, excludedDates) {
 
 }
 
-function clearFormFields() {
+function clearFormFields() {                                                    //function to clear form fields
     document.getElementById("startdate").value = "";
     document.getElementById("enddate").value = "";
     document.getElementById("excludeddates").value = "";
@@ -45,27 +45,27 @@ function clearFormFields() {
     document.getElementById("expectedDrr").value = "";
 }
 
-function addExcludedDate() {
+function addExcludedDate() {                                                                //function to add excluded date
     var excludedDates = document.getElementById("excludeddates").value.split(',');
     var newExcludedDate = prompt("Enter a new excluded date:");
     excludedDates.push(newExcludedDate);
     document.getElementById("excludeddates").value = excludedDates.join(',');
 }
-function showEditableRow() {
+function showEditableRow() {                                                       //function to show editable row 
+    clearFormFields();
     document.getElementById("editableRow").style.display = "table-row";
 }
 
-function hideEditableRow() {
+function hideEditableRow() {                                                                    //function to hide editable row
     document.getElementById("editableRow").style.display = "none";
 }
-function getData(){
+function getData(){                                                                             //function to get data from local storage
     var table = document.getElementById("myTable");
     var tableData = localStorage.getItem('table');
     
     if (!tableData) {
         showEditableRow();
     } else {
-      // Populate the table with data from local storage
       table.innerHTML = tableData;
     }
 }
