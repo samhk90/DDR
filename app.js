@@ -64,3 +64,4 @@ function getData(){
     table.innerHTML = localStorage.getItem('table');
 }
 getData();
+//samee
