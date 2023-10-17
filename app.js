@@ -23,7 +23,7 @@ function addRow() {
                                 <td>${expectedDrr}</td>
                                 <td>${new Date().toLocaleString()}</td>
                                `;
-
+                                localStorage.setItem('table', table.innerHTML); 
                                hideEditableRow();
 }
 
@@ -58,9 +58,15 @@ function showEditableRow() {
 function hideEditableRow() {
     document.getElementById("editableRow").style.display = "none";
 }
-
 function getData(){
     var table = document.getElementById("myTable");
-    table.innerHTML = localStorage.getItem('table');
+    var tableData = localStorage.getItem('table');
+    
+    if (!tableData) {
+        showEditableRow();
+    } else {
+      // Populate the table with data from local storage
+      table.innerHTML = tableData;
+    }
 }
 getData();
