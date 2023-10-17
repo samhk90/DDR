@@ -1,5 +1,6 @@
-const table = document.getElementById("myTable");
+
 function addRow() {
+    var table = document.getElementById("myTable");
     var newRow = table.insertRow(table.rows.length);
     var startDate = document.getElementById("startdate").value;
     var endDate = document.getElementById("enddate").value;
@@ -59,6 +60,7 @@ function hideEditableRow() {
 }
 
 function getData(){
+    var table = document.getElementById("myTable");
     table.innerHTML = localStorage.getItem('table');
 }
 getData();
