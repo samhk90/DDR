@@ -1,4 +1,4 @@
-var table = document.getElementById("myTable");
+const table = document.getElementById("myTable");
 function addRow() {
     var newRow = table.insertRow(table.rows.length);
     var startDate = document.getElementById("startdate").value;
